@@ -1,0 +1,16 @@
+.DS_Store
+logs/
+bin/
+tmp/
+
+# Maven build target folder
+*/target/*
+
+# Never allow JARs to be checked in
+*.jar
+*.war
+
+# Eclipse files
+.classpath
+.project
+.settings/

@@ -1,8 +1,0 @@
-controller/dao/MongoConfig.class
-controller/dao/StoreInfo.class
-controller/httpexecutor/HttpExecutorImpl.class
-controller/dto/Location.class
-controller/HomeController.class
-controller/dao/MongoDao.class
-controller/httpexecutor/HttpExecutor.class
-controller/dao/MongoDaoImpl.class
