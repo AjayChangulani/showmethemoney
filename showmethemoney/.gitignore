@@ -4,7 +4,7 @@ bin/
 tmp/
 
 # Maven build target folder
-#*/target/*
+*/target/*
 
 # Never allow JARs to be checked in
 *.jar
