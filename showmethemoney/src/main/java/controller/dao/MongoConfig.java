@@ -3,18 +3,39 @@ package controller.dao;
 
 import java.net.UnknownHostException;
 
+import org.springframework.context.annotation.Configuration;
+
 import com.mongodb.DBCollection;
 import com.mongodb.MongoClient;
 import com.mongodb.ReadPreference;
 import com.mongodb.WriteConcern;
 
+@Configuration
 public class MongoConfig
 {
 	private static String host = "localhost";
 	private static int port = 27017;
-	private static String database = "hackit";
-	private static String collection = "storeinfo";
+	private static String database = "hackathon";
+	private static String zipcode_user_collection = "zip_user";
+	private static String zipcode_offer_collection = "zip_offers";
+	private static MongoClient client;
 	
+	static
+	{
+		String host = getHost();
+		int port = getPort();
+
+		try
+		{
+			client = new MongoClient(host, port);
+			client.setReadPreference(ReadPreference.secondaryPreferred());
+			client.setWriteConcern(WriteConcern.ACKNOWLEDGED);
+		}
+		catch (UnknownHostException e)
+		{
+			throw new RuntimeException(e);
+		}
+	}
 	
 	public static String getHost()
 	{
@@ -28,27 +49,21 @@ public class MongoConfig
 	{
 		return database;
 	}
-	public static String getColl()
+	public static String getUserCollName()
 	{
-		return collection;
+		return zipcode_user_collection;
+	}
+	public static String getOfferCollName()
+	{
+		return zipcode_offer_collection;
 	}
 	
-	public static MongoClient getMongoClient() throws UnknownHostException
+	public static DBCollection getUserCollection() throws UnknownHostException
 	{
-		MongoClient client;
-
-		String host = getHost();
-		int port = getPort();
-
-		client = new MongoClient(host, port);
-
-		client.setReadPreference(ReadPreference.secondaryPreferred());
-		client.setWriteConcern(WriteConcern.ACKNOWLEDGED);
-
-		return client;
+		return client.getDB(getDatabase()).getCollection(getUserCollName());
 	}
-	public static DBCollection getCollection() throws UnknownHostException
+	public static DBCollection getOfferCollection() throws UnknownHostException
 	{
-		return getMongoClient().getDB(getDatabase()).getCollection(getColl());
+		return client.getDB(getDatabase()).getCollection(getOfferCollName());
 	}
 }

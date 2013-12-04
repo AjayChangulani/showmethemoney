@@ -37,6 +37,12 @@
 			<version>${spring.version}</version>
 		</dependency>
  		
+ 		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+	
  		<!-- Mongo dependencies -->
  
  		<dependency>
@@ -61,6 +67,13 @@
 			<version>1.9.10</version>
 		</dependency>
 	
+		<!-- Google Guava Dependencies -->
+		
+		<dependency>
+    		<groupId>com.google.guava</groupId>
+   	 		<artifactId>guava</artifactId>
+    		<version>15.0</version>
+		</dependency>
 	</dependencies>
 	
 	
