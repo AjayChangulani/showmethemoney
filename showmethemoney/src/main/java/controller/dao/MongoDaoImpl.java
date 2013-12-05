@@ -92,4 +92,9 @@ public class MongoDaoImpl implements MongoDao
 		return list;
 	}
 
+	public ImmutableList<UserInfo> getAllUserInfo() throws UnknownHostException
+	{
+		return null;
+	}
+
 }

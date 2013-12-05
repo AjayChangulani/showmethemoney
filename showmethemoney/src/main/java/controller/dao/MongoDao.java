@@ -14,4 +14,6 @@ public interface MongoDao
 	Optional<OfferInfo> getOfferInfo(String zip) throws UnknownHostException;
 	
 	Optional<ImmutableList<String>> getAllEmailAddresses(String zip) throws UnknownHostException;
+	
+	ImmutableList<UserInfo> getAllUserInfo() throws UnknownHostException;
 }

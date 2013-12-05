@@ -74,6 +74,15 @@
    	 		<artifactId>guava</artifactId>
     		<version>15.0</version>
 		</dependency>
+		
+		<!-- Simple Java Mail Dependencies-->
+		
+		<dependency>
+    		<groupId>org.codemonkey.simplejavamail</groupId>
+    		<artifactId>simple-java-mail</artifactId>
+    		<version>2.1</version>
+		</dependency>
+
 	</dependencies>
 	
 	
