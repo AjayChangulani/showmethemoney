@@ -1,4 +1,4 @@
-package controller.dao;
+package com.paypal.showmethemoney.dao;
 
 import java.util.List;
 
@@ -6,13 +6,13 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 @JsonIgnoreProperties({ "_id" })
-public class UserInfo
+public class OfferInfo
 {
 	@JsonProperty("zipcode")
 	private String zipcode;
 	
-	@JsonProperty("emailList")
-	private List<String> emailList;
+	@JsonProperty("offerIdList")
+	private List<String> offerIdList;
 	
 	public String getZipcode()
 	{
@@ -24,13 +24,14 @@ public class UserInfo
 		this.zipcode = zipcode;
 	}
 
-	public List<String> getEmailList()
+	public List<String> getOfferIdList()
 	{
-		return emailList;
+		return offerIdList;
 	}
 
-	public void setEmailList(List<String> email)
+	public void setOfferIdList(List<String> offerId)
 	{
-		this.emailList = email;
+		this.offerIdList = offerId;
 	}
+
 }

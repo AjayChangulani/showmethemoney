@@ -1,4 +1,4 @@
-package controller;
+package com.paypal.showmethemoney.controller;
 
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -13,9 +13,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
+import com.paypal.showmethemoney.dao.MongoDaoImpl;
+import com.paypal.showmethemoney.dao.UserInfo;
 
-import controller.dao.MongoDaoImpl;
-import controller.dao.UserInfo;
+
  
 @Controller
 @RequestMapping("/")

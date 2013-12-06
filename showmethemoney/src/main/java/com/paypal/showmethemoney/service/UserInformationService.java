@@ -1,8 +1,8 @@
-package controller.service;
+package com.paypal.showmethemoney.service;
 
 import com.google.common.collect.ImmutableList;
+import com.paypal.showmethemoney.dao.UserInfo;
 
-import controller.dao.UserInfo;
 
 public interface UserInformationService
 {

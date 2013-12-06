@@ -10,13 +10,14 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import com.google.common.collect.Lists;
+import com.paypal.showmethemoney.dao.OfferInfo;
+import com.paypal.showmethemoney.dao.UserInfo;
 import com.paypal.showmethemoney.dto.OfferData;
 import com.paypal.showmethemoney.service.MailingService;
 import com.paypal.showmethemoney.service.MailingService.MailInfo;
+import com.paypal.showmethemoney.service.UserInformationService;
 
-import controller.dao.OfferInfo;
-import controller.dao.UserInfo;
-import controller.service.UserInformationService;
+
 
 @Component
 public class ShowMeTheMoney {
