@@ -19,7 +19,7 @@ public class MongoDaoImpl implements MongoDao
 	private ObjectMapper objMapper;
 	private static final String ZIPCODE_FIELD_NAME = "zipcode";
 
-	MongoDaoImpl()
+	public MongoDaoImpl()
 	{
 		objMapper = new ObjectMapper();
 	}

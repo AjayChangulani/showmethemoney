@@ -8,10 +8,7 @@ import com.paypal.showmethemoney.dto.CM2OfferData;
 
 public interface Facade {
 
-	// Map<String Zipcode, List<CM2OfferData>> findOfferData(List<String> zipCodes);
-
 	ImmutableMap<String,ImmutableList<CM2OfferData>> findOfferData(List<String> zipCodes);
-
 }
 /*
  * (1) Optional<OfferInfo> OfferInfoRetreivalServiceImpl.getAllOffersForZipCode(zipcode)

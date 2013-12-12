@@ -1,0 +1,6 @@
+.DS_Store
+.metadata/
+
+# Maven build target folder
+/target/*
+

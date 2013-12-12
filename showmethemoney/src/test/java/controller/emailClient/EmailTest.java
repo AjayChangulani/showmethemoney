@@ -31,6 +31,7 @@ String text = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" 
 	"<tr> <td>&nbsp;</td> </tr> <tr> <td><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"> <tr> <td width=\"14%\" align=\"center\"><font style=\"font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#010203; font-size:9px; text-transform:uppercase\"><a href= \"http://yourlink\" style=\"color:#010203; text-decoration:none\"><strong>UNSUBSCRIBE </strong></a></font></td> </tr> </table></td> </tr> <tr> <td>&nbsp;</td> </tr> <tr> <td align=\"center\"><font style=\"font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#231f20; font-size:8px\"><strong>Hackathon Project | Developed by: Ajay Changulani &amp; Abhijeet Kushe</strong></font></td> </tr> <tr> <td>&nbsp;</td> </tr> </table></td> </tr> </table> </body> </html>";
 
 	@Test
+	@Ignore
 	public void test()
 	{
 		final Email email = new Email();

@@ -72,9 +72,5 @@ public class OfferInfoRetreivalServiceImpl implements OfferInfoRetreivalService 
 		
 		return paypalIds;
 	}
-	
-	public static void main(String[] args) throws Exception {
-		System.out.println(new OfferInfoRetreivalServiceImpl().getAllOffersForZipCode("02110"));
-	}
 
 }

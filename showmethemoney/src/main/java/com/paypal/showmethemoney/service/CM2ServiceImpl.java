@@ -19,9 +19,10 @@ public class CM2ServiceImpl implements CM2Service
 	
 	ObjectMapper objMapper;
 	
-	public CM2ServiceImpl(HttpServiceImpl httpService)
+	public CM2ServiceImpl(HttpServiceImpl httpService,MongoDaoImpl mongoDaoImpl)
 	{
 		this.httpService = httpService;
+		this.mongoDaoImpl = mongoDaoImpl;
 		objMapper = new ObjectMapper();
 	}
 	
