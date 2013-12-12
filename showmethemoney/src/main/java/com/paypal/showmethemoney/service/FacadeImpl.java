@@ -69,7 +69,8 @@ public class FacadeImpl implements Facade
 			for (String paypalId : latestPaypalIds)
 			{
 				System.out.println("inside latest for"+paypalId);
-				cm2OfferDatas.add(cm2Service.getOfferDataFromCM2(paypalId));
+				Optional<CM2OfferData> offerData = cm2Service.getOfferDataFromCM2(paypalId);
+				if(offerData.isPresent()) cm2OfferDatas.add(offerData.get());
 			}
 			return cm2OfferDatas.build();
 

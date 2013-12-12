@@ -7,6 +7,8 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.google.common.base.Optional;
+import com.google.common.base.Strings;
 import com.paypal.showmethemoney.dao.MongoDaoImpl;
 import com.paypal.showmethemoney.dto.CM2OfferData;
 
@@ -26,15 +28,17 @@ public class CM2ServiceImpl implements CM2Service
 		objMapper = new ObjectMapper();
 	}
 	
-	public CM2OfferData getOfferDataFromCM2(String paypal_Id) throws IllegalArgumentException, IllegalStateException, IOException
+	public Optional<CM2OfferData> getOfferDataFromCM2(String paypal_Id) throws IOException
 	{
 		String offer_id = mongoDaoImpl.findOfferIdBasedOnPayPalId(paypal_Id);
+		if(Strings.isNullOrEmpty(offer_id))
+			return Optional.absent();
 		
 		HttpResponse response = httpService.getCM2OfferData(offer_id);
 		CM2OfferData cm2OfferData = objMapper.readValue(response.getEntity().getContent(), CM2OfferData.class);
 		
 		System.out.println("Getting info from cm2:" + cm2OfferData);
-		return cm2OfferData;
+		return Optional.of(cm2OfferData);
 	}
 
 }

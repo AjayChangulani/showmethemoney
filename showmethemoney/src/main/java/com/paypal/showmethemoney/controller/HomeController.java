@@ -32,10 +32,29 @@ public class HomeController
 		model.addAttribute("message", "Maven Web Project + Spring 3 MVC - welcome()");
  
 		//Spring uses InternalResourceViewResolver and return back index.jsp
-		return "email";
+		return "index";
  
 	}
 
+	@RequestMapping(value="/unsubscribe",method=RequestMethod.GET)
+	public String unsubscribePage(ModelMap model)
+	{
+		return "unsubscribe";
+	}
+	@RequestMapping(value="/unsubscribe", method = RequestMethod.POST)
+	public String unsubscribe(@RequestParam("email") String email, @RequestParam("zip") String zip, ModelMap model) throws UnknownHostException
+	{
+		Optional<UserInfo> userInfo = mongoDaoImpl.getUserInfo(zip);
+		if(userInfo.isPresent())
+			userInfo.get().getEmailList().remove(email);
+		
+		mongoDaoImpl.saveUserInfo(userInfo.get());
+		
+		model.put("email", email);
+		model.put("zip", zip);
+		
+		return "unsubscribeGreetings";
+	}	
 	@RequestMapping(value="/signup", method = RequestMethod.GET)
 	public String signup(@RequestParam("email") String email, @RequestParam("zip") String zip, ModelMap model) throws UnknownHostException
 	{
