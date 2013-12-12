@@ -41,15 +41,17 @@ public class HomeController
 	{
 		return "unsubscribe";
 	}
+	
 	@RequestMapping(value="/unsubscribe", method = RequestMethod.POST)
 	public String unsubscribe(@RequestParam("email") String email, @RequestParam("zip") String zip, ModelMap model) throws UnknownHostException
 	{
 		Optional<UserInfo> userInfo = mongoDaoImpl.getUserInfo(zip);
 		if(userInfo.isPresent())
+		{
 			userInfo.get().getEmailList().remove(email);
 		
-		mongoDaoImpl.saveUserInfo(userInfo.get());
-		
+			mongoDaoImpl.saveUserInfo(userInfo.get());
+		}
 		model.put("email", email);
 		model.put("zip", zip);
 		
@@ -64,6 +66,7 @@ public class HomeController
 		model.addAttribute("email", email);
 		model.addAttribute("zip", zip);
 		
+		System.out.println("ZIPCDEEEEE:" + zip);
 		handleUser(email, zip);
 		
 		return "congratulations";
@@ -90,6 +93,7 @@ public class HomeController
 		userInfo.setEmailList(emailList);
 		userInfo.setZipcode(zip);
 		
+		System.out.println("handleUser-TEST:"+userInfo);
 		mongoDaoImpl.saveUserInfo(userInfo);
 	}
 	

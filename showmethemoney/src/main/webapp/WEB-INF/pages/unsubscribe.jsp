@@ -20,220 +20,30 @@
              //]]>
         </script>
         <style type="text/css">
-            /*<![CDATA[*/
-            td.c46 {
-                background-color: #FFFFFF;
-                text-align: left
-            }
-            td.c45 {
-                padding: 10px 0 10px 0;
-            }
-            span.c44 {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 11px;
-                color: #666666;
-            }
-            a.c43 {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 11px;
-                color: #666666;
-                text-decoration: none;
-            }
-            table.c42 {
-                background-color: #E6E6E6
-            }
-            td.c41 {
-                font-size: 0;
-                line-height: 0;
-            }
-            td.c40 {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 13px;
-                color: #0079c1;
-                text-decoration: none;
-                line-height: 18px;
-            }
-            a.c39 {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 14px;
-                color: #0079c1;
-                text-decoration: none;
-                line-height: 18px;
-            }
-            td.c38 {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 14px;
-                color: #717074;
-                text-decoration: none;
-                line-height: 18px;
-            }
-            td.c37 {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 16px;
-                font-weight: normal;
-                color: #0079c1;
-                text-decoration: none;
-                line-height: 20px;
-            }
-            td.c36 {
-                line-height: 12px;
-            }
-            table.c35 {
-                background-color: #F7F7F7
-            }
-            td.c34 {
-                background-color: #CECECE;
-                font-size: 1px;
-                line-height: 1px
-            }
-            table.c33 {
-                background-color: #FFFFFF
-            }
-            td.c32 {
-                background-color: #FFFFFF;
-                border: 1px dashed #f8a132
-            }
-            td.c31 {
-                background-color: #32A0E5
-            }
-            td.c30 {
-                background-color: #004C79;
-                font-size: 0;
-                line-height: 0
-            }
-            td.c29 {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 12px;
-                text-decoration: none;
-                color: #ffffff;
-            }
-            a.c28 {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 12px;
-                text-decoration: none;
-                color: #ffffff;
-            }
-            td.c27 {
-                background-color: #4DBEFF;
-                font-size: 0;
-                line-height: 0
-            }
-            td.c26 {
-                background-color: #0075BB;
-                font-size: 0;
-                line-height: 0
-            }
-            td.c25 {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 14px;
-                color: #8c8c8c;
-                text-decoration: none;
-                line-height: 18px;
-            }
-            td.c24 {
-                font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Arial, Helvetica, sans-serif;
-                font-size: 22px;
-                color: #515050;
-                text-decoration: none;
-                line-height: 24px;
-                font-weight: 300;
-            }
-            td.c23 {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 70px;
-                line-height: 60px;
-                font-weight: 300;
-                text-decoration: none;
-                color: #f8981d;
-            }
-            td.c22 {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 35px;
-                font-weight: 300;
-                text-decoration: none;
-                color: #f8981d;
-            }
-            td.c21 {
-                border: 1px solid #e1e1e1;
-            }
-            td.c20 {
-                background-color: #FFFFFF;
-                line-height: 9px
-            }
-            img.c19 {
-                display: block;
-                margin: 0;
-                padding: 0;
-            }
-            td.c18 {
-                background-color: #FFFFFF;
-                font-size: 5px;
-                line-height: 5px
-            }
-            td.c17 {
-                background-color: #BFBFBF
-            }
-            td.c16 {
-                background-color: #CACACA
-            }
-            td.c15 {
-                background-color: #D4D4D4
-            }
-            td.c14 {
-                background-color: #DDDDDD
-            }
-            td.c13 {
-                background-color: #E5E5E5
-            }
-            td.c12 {
-                background-color: #EAEAEA
-            }
-            td.c11 {
-                background-color: #EFEFEF
-            }
-            td.c10 {
-                background-color: #F3F3F3
-            }
-            td.c9 {
-                background-color: #F5F5F5
-            }
-            td.c8 {
-                background-color: #F7F7F7
-            }
-            td.c7 {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 33px;
-                line-height: 40px;
-                font-weight: 300;
-                text-decoration: none;
-                color: #0079c1;
-                padding: 0 30px;
-            }
-            td.c6 {
-                padding: 0 0 10px 20px;
-            }
-            td.c5 {
-                background-color: #CECECE
-            }
-            img.c4 {
-                display: block
-            }
-            td.c3 {
-                background-color: #FFFFFF
-            }
-            td.c2 {
-                background-color: #CCCCCC;
-                font-size: 0;
-                line-height: 0
-            }
-            img.c1 {
-                display: block;
-            }
+            
             /*]]>*/
         </style>
 </head>
 
 <body>
+    <!-- <div class="wrapper">
+        <img class="header" src="http://where-spotlight.s3.amazonaws.com/test/Show%20Me%20The%20Money.jpg" alt="PayPal"  />
+        
+        <div class="footer"></div>
+        
+        <div class="content">
+                <form action="signup" method="get"> 
+                        <label>Email Address</label>
+                        <input type="text" name="email" value="" id="email_address" />
+                        <br />
+                        <label>Zip Code</label>
+                        <input type="text" name="zip" value="" id="zip_code"/>
+                        <br/>
+                        <input type="submit" id="submit" class="sign-up" value="Sign-up"/> 
+                </form>                         
+        </div>
+        <div class="footer"></div>
+</div>   -->
     <table width="600" cellspacing="0" cellpadding="0" border="0" align="center" class="emailwrapto305">
         <tbody>
             <tr>
@@ -290,7 +100,7 @@
                                             </tr>
                                             <tr>
                                                 <td valign="top" align="center" class="font21 c7">
-                                                    Welcome to the world of Saving!!!
+                                                   Say GoodBye to the world of Saving!!!
                                                 </td>
                                             </tr>
                                             <tr>
@@ -391,12 +201,12 @@
                                                                                                                             </tr>
                                                                                                                             <tr>
                                                                                                                                 <td valign="top" align="left" class="c25">
-                                                                                                                                    Enter details below to receive new offer email updates.
+                                                                                                                                    We are sad to see you go. :-(
                                                                                                                                 </td>
                                                                                                                             </tr>
                                                                                                                             <tr>
                                                                                                                                 <td valign="top" align="left" class="c25">
-                                                                                                                                    Redeemable via PayPal App
+                                                                                                                                    Enter your details below to unsubscribe.
                                                                                                                                 </td>
                                                                                                                             </tr>
                                                                                                                         </tbody>
@@ -486,138 +296,101 @@
                             </tr>
                         </tbody>
                     </table>
+                   
+                   
+                   
                     <table width="560" cellspacing="0" cellpadding="0" border="0" align="center" class="emailwrapto280">
                         <tbody>
                             <tr>
                                 <td valign="top" height="14" align="left">
                                     <img width="1" height="20" border="0" class="c1" alt="" src="https://image.paypal-communication.com/paypal_na/2013/templates_ppmn/img_spacer.gif" />
                                 </td>
-                            </tr><div class="wrapper">
-        <img class="header" src="http://where-spotlight.s3.amazonaws.com/test/Show%20Me%20The%20Money.jpg" alt="PayPal"  />
-        
-        <div class="footer"></div>
-        
-        <div class="content">
-                <form action="unsubscribe" method="POST"> 
-                        <label>Email Address</label>
-                        <input type="text" name="email" value="" id="email_address" />
-                        <br />
-                        <label>Zip Code</label>
-                        <input type="text" name="zip" value="" id="zip_code"/>
-                        <br/>
-                        <input type="submit" id="submit" class="sign-up" value="Unsubscribe"/> 
-                </form>                         
-        </div>
-        <div class="footer"></div>
-</div>
+                            </tr>
                             
+                			<tr>
+                  				<td valign="top" height="14" align="left">
+                    				<img width="1" height="14"  border="0" class="c1"  alt="" src="https://image.paypal-communication.com/paypal_na/2013/templates_ppmn/img_spacer.gif" />
+                  				</td>
+                			</tr>
+                			<tr>
+                				<form action="unsubscribe" method="post">
+                				<tr>
+                			 			<td valign="top" align="left" class="c24" style="padding-top: 4px; font-size: 20px;">Email Address:</td>
+                        		
+                        				<td valign="top" align="left" class="c25">
+                        					<input type="text" name="email" value="" id="email_address" class="input-box email" />@paypal.com
+                        				</td>
+                        		</tr>
+                        		
+                        		<tr>
+                        				<td valign="top" align="left" class="c24" style="padding-top: 4px; font-size: 20px;">Zipcode:</td>
+                        				<td valign="top" align="left" class="c25">
+                        					<input type="text" name="zip" value="" id="zip_code" class="input-box zip" maxlength="5"/>(5-digit)
+                        				</td>
+                        				
+                				</tr>
+                				
+                				
+                				<tr>
+                					<td>
+                					<div>
+                						<input type="submit" id="submit" class="btn btn-primary btn-lg" value="Unsubscribe"/> 
+                					</div>
+                					</td>
+                				</tr>
+                				</form> 
+                			</tr>
+                			
+                			
+                			<tr>
+                  				<td valign="top"  height="14"  align="left">
+                     	 		<img width="1" height="14"  border="0"  class="c1"  alt=""  src="https://image.paypal-communication.com/paypal_na/2013/templates_ppmn/img_spacer.gif" />
+                  				</td>
+                			</tr>
+                			<tr>
+                  				<td valign="top" align="left" class="c40">
+                      				<strong style="margin-left: 11px; display: inline-block; margin-top: -11px; font-size: 11px;">Bye Bye!</strong>
+                       			</td>
+                     		</tr>
+              			</tbody>
+            		</table>
+            		
+            		
+            		
+            		
+            <table width="100%" cellspacing="0"  cellpadding="0" border="0">
+              <tbody>
                 <tr>
-                  <td valign="top"
-                      height="14"
-                      align="left">
-                    <img width="1"
-                        height="14"
-                        border="0"
-                        class="c1"
-                        alt=""
-                        src=
-                        "https://image.paypal-communication.com/paypal_na/2013/templates_ppmn/img_spacer.gif" />
-                  </td>
-                </tr>
-                <tr>
-                  <td valign="top"
-                      height="14"
-                      align="left">
-                    <img width="1"
-                        height="14"
-                        border="0"
-                        class="c1"
-                        alt=""
-                        src=
-                        "https://image.paypal-communication.com/paypal_na/2013/templates_ppmn/img_spacer.gif" />
-                  </td>
-                </tr>
-                <tr>
-                  <td valign="top"
-                      align="left"
-                      class="c40">
-                    <strong>Happy Saving!</strong>
+                  <td valign="top"  align="left">
+                    <img width="1"  height="30"  border="0"  class="c4"  alt="" src="https://image.paypal-communication.com/paypal_na/2013/templates_ppmn/img_spacer.gif" />
                   </td>
                 </tr>
               </tbody>
             </table>
-            <table width="100%"
-                   cellspacing="0"
-                   cellpadding="0"
-                   border="0">
+            <table class="c42" width="100%" cellspacing="0" cellpadding="0" border="0">
               <tbody>
                 <tr>
-                  <td valign="top"
-                      align="left">
-                    <img width="1"
-                        height="30"
-                        border="0"
-                        class="c4"
-                        alt=""
-                        src=
-                        "https://image.paypal-communication.com/paypal_na/2013/templates_ppmn/img_spacer.gif" />
+                  <td valign="top"  height="1"  align="left"  class="c41">
+                    <img width="1" height="1" border="0" class="c4"  alt="" src="https://image.paypal-communication.com/paypal_na/2013/templates_ppmn/img_spacer.gif" />
                   </td>
                 </tr>
               </tbody>
             </table>
-            <table class="c42"
-                   width="100%"
-                   cellspacing="0"
-                   cellpadding="0"
-                   border="0">
+            <table width="100%" cellspacing="0" cellpadding="0"  border="0">
               <tbody>
                 <tr>
-                  <td valign="top"
-                      height="1"
-                      align="left"
-                      class="c41">
-                    <img width="1"
-                        height="1"
-                        border="0"
-                        class="c4"
-                        alt=""
-                        src=
-                        "https://image.paypal-communication.com/paypal_na/2013/templates_ppmn/img_spacer.gif" />
+                  <td valign="top" align="left">
+                    <img width="1"  height="10"  border="0" class="c4" alt="" src="https://image.paypal-communication.com/paypal_na/2013/templates_ppmn/img_spacer.gif" />
                   </td>
                 </tr>
               </tbody>
             </table>
-            <table width="100%"
-                   cellspacing="0"
-                   cellpadding="0"
-                   border="0">
+            <table width="100%"  cellspacing="0" cellpadding="0" border="0">
               <tbody>
                 <tr>
-                  <td valign="top"
-                      align="left">
-                    <img width="1"
-                        height="10"
-                        border="0"
-                        class="c4"
-                        alt=""
-                        src=
-                        "https://image.paypal-communication.com/paypal_na/2013/templates_ppmn/img_spacer.gif" />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <table width="100%"
-                   cellspacing="0"
-                   cellpadding="0"
-                   border="0">
-              <tbody>
-                <tr>
-                  <td align="center"
-                      class="c45">
-                    <a class="footer c43"
-                        target="_blank"
-                        href=
-                        "https://kickfinisher.corp.ebay.com/">
+                  <td align="center" class="c45">
+                     
+                    <a class="footer c43"  target="_blank"  href= "https://kickfinisher.corp.ebay.com/">
                     <strong>Hackathon</strong></a>
 
 
@@ -630,6 +403,9 @@
                     <img width="1" height="10" border="0" class="c4" alt="" src="https://image.paypal-communication.com/paypal_na/2013/templates_ppmn/img_spacer.gif" />
                 </td>
             </tr>
+            
+            
+            
             <tr>
                 <td colspan="3">
                     <table width="100%" cellspacing="0" cellpadding="0" border="0">
