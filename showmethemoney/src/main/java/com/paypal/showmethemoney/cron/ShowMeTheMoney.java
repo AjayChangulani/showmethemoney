@@ -79,10 +79,17 @@ public class ShowMeTheMoney {
 			
 			ImmutableList<CM2OfferData> offers = zip_offerData_map.get(zip);
 			
+			try
+			{
 			if(!offers.isEmpty())
 			{
 //				emailIds_offerData_map_builder.put(emailIds, offers);
 				sendEmail(emailIds, offers, zip);
+			}
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
 			}
 		}
 

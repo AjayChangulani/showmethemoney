@@ -82,7 +82,7 @@ String text = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" 
 		offerBuilder.add(cm2OfferData3);
 		offerBuilder.add(cm2OfferData4);
 		
-		EmailConfig.sendEmail(emailBuilder.build(), offerBuilder.build());
+		EmailConfig.sendEmail(emailBuilder.build(), offerBuilder.build(), "01010");
 	}
 	@Test
 	@Ignore
