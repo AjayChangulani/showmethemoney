@@ -100,7 +100,7 @@
                                             </tr>
                                             <tr>
                                                 <td valign="top" align="center" class="font21 c7">
-                                                   Bienvenido!
+                                                   Say GoodBye to the world of Saving!!!
                                                 </td>
                                             </tr>
                                             <tr>
@@ -191,7 +191,7 @@
                                                                                                                            
                                                                                                                             <tr>
                                                                                                                                 <td valign="top" align="left" class="hide c24">
-                                                                                                                                    Howdy ${email},
+                                                                                                                                    Howdy PayPalian,
                                                                                                                                 </td>
                                                                                                                             </tr>
                                                                                                                             <tr>
@@ -201,7 +201,12 @@
                                                                                                                             </tr>
                                                                                                                             <tr>
                                                                                                                                 <td valign="top" align="left" class="c25">
-                                                                                                                                    You have been subscribed for ${zip}.
+                                                                                                                                    We are sad to see you go. :-(
+                                                                                                                                </td>
+                                                                                                                            </tr>
+                                                                                                                            <tr>
+                                                                                                                                <td valign="top" align="left" class="c25">
+                                                                                                                                    Enter your details below to unsubscribe.
                                                                                                                                 </td>
                                                                                                                             </tr>
                                                                                                                         </tbody>
@@ -282,12 +287,87 @@
                             </tr>
                         </tbody>
                     </table>
+                    <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tbody>
+                            <tr>
+                                <td valign="top" height="12" align="left" class="c36">
+                                    <img width="100%" height="12" border="0" class="c1" alt="" src="https://image.paypal-communication.com/paypal_na/2013/templates_ppmn/img_grey_divider.gif" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                    
+                   
+                   
+                    <table width="560" cellspacing="0" cellpadding="0" border="0" align="center" class="emailwrapto280">
+                        <tbody>
+                            <tr>
+                                <td valign="top" height="14" align="left">
+                                    <img width="1" height="20" border="0" class="c1" alt="" src="https://image.paypal-communication.com/paypal_na/2013/templates_ppmn/img_spacer.gif" />
+                                </td>
+                            </tr>
+                            
+                			<tr>
+                  				<td valign="top" height="14" align="left">
+                    				<img width="1" height="14"  border="0" class="c1"  alt="" src="https://image.paypal-communication.com/paypal_na/2013/templates_ppmn/img_spacer.gif" />
+                  				</td>
+                			</tr>
+                			<tr>
+                				<form action="unsubscribe" method="post">
+                				<tr>
+                			 			<td valign="top" align="left" class="c24" style="padding-top: 4px; font-size: 20px;">Email Address:</td>
+                        		
+                        				<td valign="top" align="left" class="c25">
+                        					<input type="text" name="email" value="" id="email_address" class="input-box email" />@paypal.com
+                        				</td>
+                        		</tr>
+                        		
+                        		<tr>
+                        				<td valign="top" align="left" class="c24" style="padding-top: 4px; font-size: 20px;">Zipcode:</td>
+                        				<td valign="top" align="left" class="c25">
+                        					<input type="text" name="zip" value="" id="zip_code" class="input-box zip" maxlength="5"/>(5-digit)
+                        				</td>
+                        				
+                				</tr>
+                				
+                				
+                				<tr>
+                					<td>
+                					<div>
+                						<input type="submit" id="submit" class="btn btn-primary btn-lg" value="Unsubscribe"/> 
+                					</div>
+                					</td>
+                				</tr>
+                				</form> 
+                			</tr>
+                			
+                			
+                			<tr>
+                  				<td valign="top"  height="14"  align="left">
+                     	 		<img width="1" height="14"  border="0"  class="c1"  alt=""  src="https://image.paypal-communication.com/paypal_na/2013/templates_ppmn/img_spacer.gif" />
+                  				</td>
+                			</tr>
+                			<tr>
+                  				<td valign="top" align="left" class="c40">
+                      				<strong style="margin-left: 11px; display: inline-block; margin-top: -11px; font-size: 11px;">Bye Bye!</strong>
+                       			</td>
+                     		</tr>
+              			</tbody>
+            		</table>
             		
             		
             		
             		
-                        <table class="c42" width="100%" cellspacing="0" cellpadding="0" border="0">
+            <table width="100%" cellspacing="0"  cellpadding="0" border="0">
+              <tbody>
+                <tr>
+                  <td valign="top"  align="left">
+                    <img width="1"  height="30"  border="0"  class="c4"  alt="" src="https://image.paypal-communication.com/paypal_na/2013/templates_ppmn/img_spacer.gif" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="c42" width="100%" cellspacing="0" cellpadding="0" border="0">
               <tbody>
                 <tr>
                   <td valign="top"  height="1"  align="left"  class="c41">

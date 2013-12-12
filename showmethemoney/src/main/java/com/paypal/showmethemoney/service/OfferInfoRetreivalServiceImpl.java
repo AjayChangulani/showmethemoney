@@ -39,7 +39,6 @@ public class OfferInfoRetreivalServiceImpl implements OfferInfoRetreivalService 
 
 	public Optional<OfferInfo> getAllOffersForZipCode(String zipcode) throws Exception
 	{
-		System.out.println("OIRSI-TEST:" + zipcode);
 		JSONObject resp = webClient.resource(String.format(storeLocatorEndpoint, zipcode)).type(MediaType.APPLICATION_JSON).get(JSONObject.class);
 		
 		if(!resp.has("items"))

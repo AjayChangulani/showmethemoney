@@ -43,7 +43,7 @@ public class ShowMeTheMoney {
 		this.facade = facade;
 	}
 	
-	@Scheduled(cron = "01 * * * * *")
+	@Scheduled(cron = "02 * * * * *")
 	public void execute() throws UnknownHostException, AddressException, MessagingException
 	{
 		System.out.println("Cron being exeucted: "+DateUtils.formatDate(new Date()));
@@ -72,6 +72,8 @@ public class ShowMeTheMoney {
 		
 		for(Entry<String, ImmutableList<String>> entry : zip_emailIds_map.entrySet())
 		{
+//			ImmutableMap.Builder<ImmutableList<String>, ImmutableList<CM2OfferData>> emailIds_offerData_map_builder = ImmutableMap.<ImmutableList<String>, ImmutableList<CM2OfferData>> builder();
+			
 			String zip = entry.getKey();
 			ImmutableList<String> emailIds = entry.getValue();
 			
@@ -79,32 +81,30 @@ public class ShowMeTheMoney {
 			
 			if(!offers.isEmpty())
 			{
-				System.out.println("inside !offers.isEmpty()");
-				emailIds_offerData_map_builder.put(emailIds, offers);
+//				emailIds_offerData_map_builder.put(emailIds, offers);
+				sendEmail(emailIds, offers, zip);
 			}
 		}
 
-		ImmutableMap<ImmutableList<String>, ImmutableList<CM2OfferData>> emailIds_offerData_map = emailIds_offerData_map_builder.build();
+//		ImmutableMap<ImmutableList<String>, ImmutableList<CM2OfferData>> emailIds_offerData_map = emailIds_offerData_map_builder.build();
 		
-		System.out.println("Email-Offer Map Created:" + emailIds_offerData_map);
 		
-		for(Entry<ImmutableList<String>, ImmutableList<CM2OfferData>> entry : emailIds_offerData_map.entrySet())
-		{
-			System.out.println("inside for");
-			sendEmail(entry.getKey(), entry.getValue());
-		}
+//		for(Entry<ImmutableList<String>, ImmutableList<CM2OfferData>> entry : emailIds_offerData_map.entrySet())
+//		{
+//			sendEmail(entry.getKey(), entry.getValue());
+//		}
 		
 		System.out.println("Cron Job Finished." + new Date().getTime());
 	}
 
-	private void sendEmail(ImmutableList<String> recipients, ImmutableList<CM2OfferData> offers) throws AddressException, MessagingException
+	private void sendEmail(ImmutableList<String> recipients, ImmutableList<CM2OfferData> offers, String zip) throws AddressException, MessagingException
 	{
 		/*
 		 * TO-DO:transfer this to separate EmailService
 		 */
 		System.out.println("Sending Email. Recipients:" + recipients + ". Offers:" + offers);
 		
-		EmailConfig.sendEmail(recipients, offers);
+		EmailConfig.sendEmail(recipients, offers, zip);
 	}
 
 	private List<String> extractZipCodes(List<UserInfo> users)

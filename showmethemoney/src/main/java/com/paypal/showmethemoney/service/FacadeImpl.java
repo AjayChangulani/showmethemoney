@@ -51,22 +51,20 @@ public class FacadeImpl implements Facade
 
 		Optional<OfferInfo> latestOfferInfo = offerInfoService.getAllOffersForZipCode(zipCode);
 
-		System.out.println("inside facade:" + latestOfferInfo);
-		
 		if (!latestOfferInfo.isPresent())
 			return ImmutableList.of();
 		else
 		{
 
 			Optional<OfferInfo> existingOfferInfo = this.showMeTheMoneyDao.getOfferInfo(zipCode);
-			ImmutableList<String> latestPaypalIds = differenceOrLAtest(latestOfferInfo, existingOfferInfo);
+			ImmutableList<String> diffPaypalIds = differenceOrLAtest(latestOfferInfo, existingOfferInfo);
 
-			latestOfferInfo.get().setPaypalIdList(latestPaypalIds);
+			latestOfferInfo.get().setPaypalIdList(latestOfferInfo.get().getPaypalIdList());
 
 			showMeTheMoneyDao.saveOfferInfo(latestOfferInfo.get());
 
-			System.out.println("printing latest paypalids:" + latestPaypalIds);
-			for (String paypalId : latestPaypalIds)
+			System.out.println("printing latest paypalids:" + diffPaypalIds);
+			for (String paypalId : diffPaypalIds)
 			{
 				System.out.println("inside latest for"+paypalId);
 				Optional<CM2OfferData> offerData = cm2Service.getOfferDataFromCM2(paypalId);
