@@ -14,6 +14,12 @@ public class UserInfo
 	@JsonProperty("emailList")
 	private List<String> emailList;
 	
+	@Override
+	public String toString()
+	{
+		return "UserInfo [zipcode=" + zipcode + ", emailList=" + emailList + "]";
+	}
+
 	public String getZipcode()
 	{
 		return zipcode;
