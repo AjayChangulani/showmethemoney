@@ -30,7 +30,7 @@ public class OfferInfoRetreivalServiceImpl implements OfferInfoRetreivalService 
 
 	private final Client webClient;
 	
-	private final String storeLocatorEndpoint = "http://storelocator.api.qa1.where.com/v1/stores?zipcode=%s&radius=5.0";
+	private final static String storeLocatorEndpoint = "http://storelocator.api.qa1.where.com/v1/stores?zipcode=%s&radius=10.0&items_per_page=500";
 
 	public OfferInfoRetreivalServiceImpl() {
 		webClient = Client.create(JSON_CONFIGURED);
