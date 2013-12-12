@@ -3,24 +3,24 @@ package com.paypal.showmethemoney.service;
 import java.util.List;
 
 import org.apache.commons.collections.CollectionUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.paypal.showmethemoney.dao.MongoDao;
-import com.paypal.showmethemoney.dao.MongoDaoImpl;
 import com.paypal.showmethemoney.dao.OfferInfo;
 import com.paypal.showmethemoney.dto.CM2OfferData;
 
 @Service
 public class FacadeImpl implements Facade
 {
-
 	private final OfferInfoRetreivalService offerInfoService;
 	private final CM2Service cm2Service;
 	private final MongoDao showMeTheMoneyDao;
 
+	@Autowired
 	public FacadeImpl(OfferInfoRetreivalService offerInfoService, CM2Service cm2Service, MongoDao showMeTheMoneyDao)
 	{
 		this.offerInfoService = offerInfoService;
@@ -28,7 +28,6 @@ public class FacadeImpl implements Facade
 		this.showMeTheMoneyDao = showMeTheMoneyDao;
 	}
 
-	@Override
 	public ImmutableMap<String, ImmutableList<CM2OfferData>> findOfferData(List<String> zipCodes)
 	{
 		ImmutableMap.Builder<String, ImmutableList<CM2OfferData>> zipCodesOfferInfo = ImmutableMap.builder();
@@ -52,6 +51,8 @@ public class FacadeImpl implements Facade
 
 		Optional<OfferInfo> latestOfferInfo = offerInfoService.getAllOffersForZipCode(zipCode);
 
+		System.out.println("inside facade:" + latestOfferInfo);
+		
 		if (!latestOfferInfo.isPresent())
 			return ImmutableList.of();
 		else
@@ -64,10 +65,12 @@ public class FacadeImpl implements Facade
 
 			showMeTheMoneyDao.saveOfferInfo(latestOfferInfo.get());
 
+			System.out.println("printing latest paypalids:" + latestPaypalIds);
 			for (String paypalId : latestPaypalIds)
-
+			{
+				System.out.println("inside latest for"+paypalId);
 				cm2OfferDatas.add(cm2Service.getOfferDataFromCM2(paypalId));
-
+			}
 			return cm2OfferDatas.build();
 
 		}

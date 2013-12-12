@@ -19,6 +19,8 @@ import org.codemonkey.simplejavamail.Mailer;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import com.google.common.collect.ImmutableList;
+import com.paypal.showmethemoney.config.EmailConfig;
 import com.paypal.showmethemoney.dto.CM2OfferData;
 
 
@@ -40,11 +42,48 @@ String text = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" 
 		email.setFromAddress("Test", "achangulani@corp.ebay.com");
 		email.setSubject("ShowMeTheMoney!");
 		email.addRecipient("Test", "achangulani@corp.ebay.com", RecipientType.TO);
-//		email.setText("TEST");
 		email.setTextHTML(text);
 		new Mailer("smtplvs.qa.paypal.com", 25, username, "paypal1028#").sendMail(email);
 	}
 	
+	@Test
+	@Ignore
+	public void test2()
+	{
+		ImmutableList.Builder<String> emailBuilder = ImmutableList.<String> builder();
+		emailBuilder.add("achangulani@corp.ebay.com");
+		emailBuilder.add("akushe@corp.ebay.com");
+		
+
+		ImmutableList.Builder<CM2OfferData> offerBuilder = ImmutableList.<CM2OfferData> builder();
+		
+		
+		CM2OfferData cm2OfferData1 = new CM2OfferData();
+		cm2OfferData1.setMerchant_name("Toys R Us");
+		cm2OfferData1.setTitle("$5 off $10");
+		
+		CM2OfferData cm2OfferData2 = new CM2OfferData();
+		cm2OfferData2.setMerchant_name("Toys R Us");
+		cm2OfferData2.setTitle("$5 off $10");
+		
+
+		CM2OfferData cm2OfferData3 = new CM2OfferData();
+		cm2OfferData3.setMerchant_name("Toys R Us");
+		cm2OfferData3.setTitle("$5 off $10");
+		
+
+		CM2OfferData cm2OfferData4 = new CM2OfferData();
+		cm2OfferData4.setMerchant_name("Toys R Us");
+		cm2OfferData4.setTitle("$5 off $10");
+		
+		
+		offerBuilder.add(cm2OfferData1);
+		offerBuilder.add(cm2OfferData2);
+		offerBuilder.add(cm2OfferData3);
+		offerBuilder.add(cm2OfferData4);
+		
+		EmailConfig.sendEmail(emailBuilder.build(), offerBuilder.build());
+	}
 	@Test
 	@Ignore
 	public void javamail()

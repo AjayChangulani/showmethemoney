@@ -96,12 +96,13 @@ public class MongoDaoImpl implements MongoDao
 	{
 		DBCursor resultSet = MongoConfig.getUserCollection().find();
 		ImmutableList.Builder<UserInfo> userInfoListBuilder = ImmutableList.<UserInfo> builder();
-		
-		if(resultSet.hasNext())
+		System.out.println("before while in mongo");
+		while(resultSet.hasNext())
 		{
 			userInfoListBuilder.add(objMapper.convertValue(resultSet.next(), UserInfo.class));
+			System.out.println("inside mongodao - getAllUserInfo");
 		}
-		
+		System.out.println("after while in mongo");
 		return userInfoListBuilder.build();
 	}
 
@@ -116,7 +117,7 @@ public class MongoDaoImpl implements MongoDao
 		
 		String offerId = null;
 		
-		if(resultSet != null)
+		if(resultSet.hasNext())
 		{
 			offerId = resultSet.next().get("offer_id").toString();
 		}

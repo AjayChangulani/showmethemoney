@@ -5,7 +5,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map.Entry;
 
-import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
 
@@ -18,11 +17,16 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.paypal.showmethemoney.config.EmailConfig;
+import com.paypal.showmethemoney.dao.MongoDaoImpl;
 import com.paypal.showmethemoney.dao.UserInfo;
 import com.paypal.showmethemoney.dto.CM2OfferData;
+import com.paypal.showmethemoney.service.CM2ServiceImpl;
 import com.paypal.showmethemoney.service.Facade;
-import com.paypal.showmethemoney.service.MailingService;
+import com.paypal.showmethemoney.service.FacadeImpl;
+import com.paypal.showmethemoney.service.HttpServiceImpl;
+import com.paypal.showmethemoney.service.OfferInfoRetreivalServiceImpl;
 import com.paypal.showmethemoney.service.UserInformationService;
+import com.paypal.showmethemoney.service.UserInformationServiceImpl;
 
 
 @Component
@@ -30,21 +34,13 @@ public class ShowMeTheMoney {
 
 	private final UserInformationService userInfoService;
 	
-	private final MailingService mailService;
-
-//	@Autowired
-//	Facade facade;
-//	
-	public ShowMeTheMoney()
-	{
-		this(null,null);
-	}
+	Facade facade;
 	
-
-	public ShowMeTheMoney(UserInformationService userInfoService,MailingService mailService)
+	@Autowired
+	public ShowMeTheMoney(UserInformationService userInfoService, Facade facade)
 	{
 		this.userInfoService = userInfoService;
-		this.mailService = mailService;
+		this.facade = facade;
 	}
 	
 	@Scheduled(cron = "01 * * * * *")
@@ -53,41 +49,52 @@ public class ShowMeTheMoney {
 		System.out.println("Cron being exeucted: "+DateUtils.formatDate(new Date()));
 
 		
-//		ImmutableList<UserInfo> allUsers = userInfoService.getAllUsersInformation();
-//		ImmutableMap.Builder<String, ImmutableList<String>> zip_emailIds_map_builder = ImmutableMap.<String, ImmutableList<String>> builder();
-//
-//		/*
-//		 * TO-DO:tranfer this to mongodaoimpl
-//		 */
-//		for(UserInfo individualUser:allUsers)
-//		{
-//			String zip = individualUser.getZipcode();
-//			ImmutableList<String> emailIds = (ImmutableList<String>) individualUser.getEmailList();
-//			zip_emailIds_map_builder.put(zip, emailIds);
-//		}
-//		
-//		ImmutableMap<String, ImmutableList<String>> zip_emailIds_map = zip_emailIds_map_builder.build();
-//		
-//		ImmutableMap<String, ImmutableList<CM2OfferData>> zip_offerData_map = facade.findOfferData(extractZipCodes(allUsers));
-//		
-//		ImmutableMap.Builder<ImmutableList<String>, ImmutableList<CM2OfferData>> emailIds_offerData_map_builder = ImmutableMap.<ImmutableList<String>, ImmutableList<CM2OfferData>> builder();
-//		
-//		for(Entry<String, ImmutableList<String>> entry : zip_emailIds_map.entrySet())
-//		{
-//			String zip = entry.getKey();
-//			ImmutableList<String> emailIds = entry.getValue();
-//			
-//			ImmutableList<CM2OfferData> offers = zip_offerData_map.get(zip);
-//			
-//			emailIds_offerData_map_builder.put(emailIds, offers);
-//		}
-//
-//		ImmutableMap<ImmutableList<String>, ImmutableList<CM2OfferData>> emailIds_offerData_map = emailIds_offerData_map_builder.build();
-//		
-//		for(Entry<ImmutableList<String>, ImmutableList<CM2OfferData>> entry : emailIds_offerData_map.entrySet())
-//		{
-//			sendEmail(entry.getKey(), entry.getValue());
-//		}
+		ImmutableList<UserInfo> allUsers = userInfoService.getAllUsersInformation();
+		ImmutableMap.Builder<String, ImmutableList<String>> zip_emailIds_map_builder = ImmutableMap.<String, ImmutableList<String>> builder();
+
+		/*
+		 * TO-DO:tranfer this to mongodaoimpl
+		 */
+		
+		for(UserInfo individualUser : allUsers)
+		{
+			String zip = individualUser.getZipcode();
+			
+			ImmutableList<String> emailIds = ImmutableList.copyOf(individualUser.getEmailList());
+			zip_emailIds_map_builder.put(zip, emailIds);
+		}
+		
+		ImmutableMap<String, ImmutableList<String>> zip_emailIds_map = zip_emailIds_map_builder.build();
+		
+		ImmutableMap<String, ImmutableList<CM2OfferData>> zip_offerData_map = facade.findOfferData(extractZipCodes(allUsers));
+		
+		ImmutableMap.Builder<ImmutableList<String>, ImmutableList<CM2OfferData>> emailIds_offerData_map_builder = ImmutableMap.<ImmutableList<String>, ImmutableList<CM2OfferData>> builder();
+		
+		for(Entry<String, ImmutableList<String>> entry : zip_emailIds_map.entrySet())
+		{
+			String zip = entry.getKey();
+			ImmutableList<String> emailIds = entry.getValue();
+			
+			ImmutableList<CM2OfferData> offers = zip_offerData_map.get(zip);
+			
+			if(!offers.isEmpty())
+			{
+				System.out.println("inside !offers.isEmpty()");
+				emailIds_offerData_map_builder.put(emailIds, offers);
+			}
+		}
+
+		ImmutableMap<ImmutableList<String>, ImmutableList<CM2OfferData>> emailIds_offerData_map = emailIds_offerData_map_builder.build();
+		
+		System.out.println("Email-Offer Map Created:" + emailIds_offerData_map);
+		
+		for(Entry<ImmutableList<String>, ImmutableList<CM2OfferData>> entry : emailIds_offerData_map.entrySet())
+		{
+			System.out.println("inside for");
+			sendEmail(entry.getKey(), entry.getValue());
+		}
+		
+		System.out.println("Cron Job Finished." + new Date().getTime());
 	}
 
 	private void sendEmail(ImmutableList<String> recipients, ImmutableList<CM2OfferData> offers) throws AddressException, MessagingException
@@ -95,8 +102,9 @@ public class ShowMeTheMoney {
 		/*
 		 * TO-DO:transfer this to separate EmailService
 		 */
-		Message message = EmailConfig.getMessage(recipients, offers);
-		EmailConfig.sendEmail(message);
+		System.out.println("Sending Email. Recipients:" + recipients + ". Offers:" + offers);
+		
+		EmailConfig.sendEmail(recipients, offers);
 	}
 
 	private List<String> extractZipCodes(List<UserInfo> users)
@@ -109,7 +117,12 @@ public class ShowMeTheMoney {
 		}
 		return zipCodes;
 	}
-	
+
+	public static void main(String[] args) throws AddressException, UnknownHostException, MessagingException
+	{
+		MongoDaoImpl mongo = new MongoDaoImpl();
+		new ShowMeTheMoney(new UserInformationServiceImpl(mongo), new FacadeImpl(new OfferInfoRetreivalServiceImpl(),new CM2ServiceImpl(new HttpServiceImpl(), mongo), mongo)).execute();
+	}
 	
 	/*
 	 * 1. using mongodaoimpl.getAllUserInfo to get ALL zipcode-List<user> info. DONE

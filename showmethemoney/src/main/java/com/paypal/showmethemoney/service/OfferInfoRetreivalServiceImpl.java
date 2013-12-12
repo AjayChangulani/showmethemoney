@@ -7,6 +7,7 @@ import javax.ws.rs.core.MediaType;
 
 import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONObject;
+import org.springframework.stereotype.Service;
 
 import com.google.common.base.Optional;
 import com.google.common.collect.Lists;
@@ -17,6 +18,7 @@ import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 import com.sun.jersey.api.json.JSONConfiguration;
 
+@Service
 public class OfferInfoRetreivalServiceImpl implements OfferInfoRetreivalService {
 
 	private static final ClientConfig JSON_CONFIGURED = new DefaultClientConfig();
@@ -28,7 +30,7 @@ public class OfferInfoRetreivalServiceImpl implements OfferInfoRetreivalService 
 
 	private final Client webClient;
 	
-	private final String storeLocatorEndpoint = "http://storelocator.api.qa.where.com/v1/stores?zipcode=%s&radius=5.0&name=Davis";
+	private final String storeLocatorEndpoint = "http://storelocator.api.qa1.where.com/v1/stores?zipcode=%s&radius=5.0";
 
 	public OfferInfoRetreivalServiceImpl() {
 		webClient = Client.create(JSON_CONFIGURED);

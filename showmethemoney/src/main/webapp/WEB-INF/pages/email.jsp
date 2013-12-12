@@ -60,32 +60,8 @@
           <td><table width="600" border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td width="18">&nbsp;</td>
-                <td width="175" align="center" valign="top">
-                	<table width="175" border="0" cellspacing="0" cellpadding="0">
-                    	<tr>
-                      		<td  bgcolor="#03bcda"><p width="175" height="14" style="display:block" border="0"></p></td>
-                    	</tr>
-                    	<tr>
-                      		<td height="30" align="center" valign="middle" bgcolor="#03bcda"><font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#ffffff; font-size:20px; text-transform:uppercase"><strong>$5 Coupon</strong></font></td>
-                    	</tr>
-                    	<tr>
-                      		<td bgcolor="#03bcda"><p width="175" height="18"></p></td>
-                    	</tr>
-                    	<tr>
-                      		<td align="center" valign="middle" bgcolor="#03bcda">
-                      			<font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#ffffff; font-size:14px">
-                    			<strong>EAT-24</strong>
-                      			</font>
-                      		</td>
-                    	</tr>
-                    	<tr>
-                      		<td align="center" valign="middle" bgcolor="#03bcda">&nbsp;</td>
-                    	</tr>
-                  	</table>
-                 </td>
-                  
-                  
-                <td width="19">&nbsp;</td>
+                
+                
                 <td width="175" align="center" valign="top">
                 	<table width="175" border="0" cellspacing="0" cellpadding="0">
                     	<tr>
@@ -110,6 +86,37 @@
                   	</table>
                  </td>
                 <td width="19">&nbsp;</td>
+                
+                
+                
+                
+                <td width="175" align="center" valign="top">
+                	<table width="175" border="0" cellspacing="0" cellpadding="0">
+                    	<tr>
+                      		<td  bgcolor="#03bcda"><p width="175" height="14" style="display:block" border="0"></p></td>
+                    	</tr>
+                    	<tr>
+                      		<td height="30" align="center" valign="middle" bgcolor="#03bcda"><font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#ffffff; font-size:20px; text-transform:uppercase"><strong>$5 Coupon</strong></font></td>
+                    	</tr>
+                    	<tr>
+                      		<td bgcolor="#03bcda"><p width="175" height="18"></p></td>
+                    	</tr>
+                    	<tr>
+                      		<td align="center" valign="middle" bgcolor="#03bcda">
+                      			<font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#ffffff; font-size:14px">
+                    			<strong>EAT-24</strong>
+                      			</font>
+                      		</td>
+                    	</tr>
+                    	<tr>
+                      		<td align="center" valign="middle" bgcolor="#03bcda">&nbsp;</td>
+                    	</tr>
+                  	</table>
+                 </td>
+                <td width="19">&nbsp;</td>
+                
+                
+                
                 <td width="175" align="center" valign="top">
                 	<table width="175" border="0" cellspacing="0" cellpadding="0">
                     	<tr>
@@ -134,6 +141,8 @@
                   	</table>
                  </td>
                 <td width="19">&nbsp;</td>
+                
+                
               </tr>
             </table></td>
         </tr>

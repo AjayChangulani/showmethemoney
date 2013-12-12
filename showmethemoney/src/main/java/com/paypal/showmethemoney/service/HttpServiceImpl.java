@@ -23,7 +23,7 @@ public class HttpServiceImpl implements HttpService
 	{
 		if(offer_id == null)
 		{
-			throw new IllegalArgumentException("URL is null");
+			throw new IllegalArgumentException("offer_id is null");
 		}
 		try
 		{

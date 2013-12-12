@@ -8,6 +8,12 @@ import org.codehaus.jackson.annotate.JsonProperty;
 @JsonIgnoreProperties({ "_id" })
 public class OfferInfo
 {
+	@Override
+	public String toString()
+	{
+		return "OfferInfo [zipcode=" + zipcode + ", paypalIdList=" + paypalIdList + "]";
+	}
+
 	@JsonProperty("zipcode")
 	private String zipcode;
 	
