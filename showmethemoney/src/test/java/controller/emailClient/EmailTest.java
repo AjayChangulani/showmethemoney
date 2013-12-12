@@ -1,5 +1,6 @@
 package controller.emailClient;
 
+
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -13,6 +14,7 @@ import javax.mail.internet.MimeMessage;
 import org.junit.Ignore;
 import org.junit.Test;
 
+@Ignore
 public class EmailTest
 {
 

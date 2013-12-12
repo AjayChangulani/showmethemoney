@@ -1,99 +1,120 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.paypal.demandgen.hackathon</groupId>
-  <artifactId>showmethemoney</artifactId>
-  <packaging>war</packaging>
-  <version>1.0-SNAPSHOT</version>
-  
-  	<properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.paypal.demandgen.hackathon</groupId>
+	<artifactId>showmethemoney</artifactId>
+	<packaging>war</packaging>
+	<version>1.0-SNAPSHOT</version>
+
+	<properties>
 		<spring.version>3.0.5.RELEASE</spring.version>
 		<jdk.version>1.6</jdk.version>
 	</properties>
 
- 
+
 	<dependencies>
-  		<dependency>
-      		<groupId>junit</groupId>
-      		<artifactId>junit</artifactId>
-      		<version>4.10</version>
-    	</dependency>
-    
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+		</dependency>
+
 		<!-- Spring 3 dependencies -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
- 
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
- 
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
- 		
- 		<dependency>
+
+		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>
 			<version>2.2.2</version>
 		</dependency>
-	
- 		<!-- Mongo dependencies -->
- 
- 		<dependency>
+
+		<!-- Mongo dependencies -->
+
+		<dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongo-java-driver</artifactId>
 			<version>2.11.2</version>
 		</dependency>
-		
+
 		<!-- Http Client dependencie -->
-		
+
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
 			<version>4.3.1</version>
 		</dependency>
-          
-        <!-- Jackson Mapper Dependencies -->
-          
-          <dependency>
+
+		<!-- Jackson Mapper Dependencies -->
+
+		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>1.9.10</version>
 		</dependency>
-	
+
 		<!-- Google Guava Dependencies -->
-		
+
 		<dependency>
-    		<groupId>com.google.guava</groupId>
-   	 		<artifactId>guava</artifactId>
-    		<version>15.0</version>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>15.0</version>
 		</dependency>
-		
-		<!-- Simple Java Mail Dependencies-->
-		
-		<!-- <dependency>
-    		<groupId>org.codemonkey.simplejavamail</groupId>
-    		<artifactId>simple-java-mail</artifactId>
-    		<version>2.1</version>
-		</dependency>
- -->
+
+		<!-- Simple Java Mail Dependencies -->
+
+		<!-- <dependency> <groupId>org.codemonkey.simplejavamail</groupId> <artifactId>simple-java-mail</artifactId> 
+			<version>2.1</version> </dependency> -->
 		<dependency>
-	 		<groupId>javax.mail</groupId>
-	 		<artifactId>mail</artifactId>
-	 		<version>1.4.5</version>
-    	</dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>1.18</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-json</artifactId>
+			<version>1.18</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+
 	</dependencies>
-	
-	
-		<build>
-    	<finalName>showmethemoney</finalName>
-    	<plugins>
+
+
+	<build>
+		<finalName>showmethemoney</finalName>
+		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -103,17 +124,16 @@
 					<target>${jdk.version}</target>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
 				<artifactId>maven-jetty-plugin</artifactId>
 				<version>6.1.10</version>
 				<configuration>
-                    <scanIntervalSeconds>10</scanIntervalSeconds>
-                </configuration>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+				</configuration>
 			</plugin>
-			
+
 		</plugins>
-  	</build>
-	
+	</build>
 </project>
