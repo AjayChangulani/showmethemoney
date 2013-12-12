@@ -1,10 +1,12 @@
 package com.paypal.showmethemoney.service;
 
-import com.google.common.base.Optional;
-import com.paypal.showmethemoney.dao.OfferInfo;
+import java.util.List;
+import java.util.Map;
+
+import com.paypal.showmethemoney.dto.CM2OfferData;
 
 public interface Facade {
 
-	Optional<OfferInfo> getAllOffersForZipCode(String zipcode) throws Exception;
+	Map<String,List<CM2OfferData>> findOfferData(List<String> zipCodes);
 
 }
