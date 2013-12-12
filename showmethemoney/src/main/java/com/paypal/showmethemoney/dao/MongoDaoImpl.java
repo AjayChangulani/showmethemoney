@@ -105,4 +105,23 @@ public class MongoDaoImpl implements MongoDao
 		return userInfoListBuilder.build();
 	}
 
+	public String findOfferIdBasedOnPayPalId(String paypalId) throws UnknownHostException
+	{
+		BasicDBObject projections = new BasicDBObject();
+		projections.put("_id", 0);
+		projections.put("offer_id", 1);
+		
+		DBObject findQuery = QueryBuilder.start("incentive_campaign_id").is(paypalId).get();
+		DBCursor resultSet = MongoConfig.getOfferInfoCollection().find(findQuery, projections);
+		
+		String offerId = null;
+		
+		if(resultSet != null)
+		{
+			offerId = resultSet.next().get("offer_id").toString();
+		}
+		
+		return offerId;
+	}
+
 }

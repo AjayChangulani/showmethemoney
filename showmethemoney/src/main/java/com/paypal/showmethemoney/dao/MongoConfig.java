@@ -18,7 +18,11 @@ public class MongoConfig
 	private static String database = "hackathon";
 	private static String zipcode_user_collection = "zip_user";
 	private static String zipcode_offer_collection = "zip_offers";
-	private static String offer_info_collection = "offer_info";
+	
+	private static String qa_host = "lvs-atlas-qa1-mongodb3001.qa.paypal.com";
+	private static String qa_database = "atlas";
+	private static String qa_offer_collection = "offer";
+	private static MongoClient qa_mongo_client;
 	
 	private static MongoClient client;
 	
@@ -32,6 +36,9 @@ public class MongoConfig
 			client = new MongoClient(host, port);
 			client.setReadPreference(ReadPreference.secondaryPreferred());
 			client.setWriteConcern(WriteConcern.ACKNOWLEDGED);
+			
+			
+			qa_mongo_client = new MongoClient(qa_host, port);
 		}
 		catch (UnknownHostException e)
 		{
@@ -59,10 +66,6 @@ public class MongoConfig
 	{
 		return zipcode_offer_collection;
 	}
-	public static String getOfferInfoCollName()
-	{
-		return offer_info_collection;
-	}
 	
 	public static DBCollection getUserCollection() throws UnknownHostException
 	{
@@ -76,6 +79,6 @@ public class MongoConfig
 	
 	public static DBCollection getOfferInfoCollection() throws UnknownHostException
 	{
-		return client.getDB(getDatabase()).getCollection(getOfferInfoCollName());
+		return qa_mongo_client.getDB(qa_database).getCollection(qa_offer_collection);
 	}
 }

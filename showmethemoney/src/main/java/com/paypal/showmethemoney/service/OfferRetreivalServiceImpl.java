@@ -55,7 +55,7 @@ public class OfferRetreivalServiceImpl implements OfferRetreivalService {
 	{
 		OfferInfo offerInfo = new OfferInfo();
 		offerInfo.setZipcode(zipcode);
-		offerInfo.setOfferIdList(Lists.newArrayList(paypalIds));
+		offerInfo.setPaypalIdList(Lists.newArrayList(paypalIds));
 		return offerInfo;
 	}
 

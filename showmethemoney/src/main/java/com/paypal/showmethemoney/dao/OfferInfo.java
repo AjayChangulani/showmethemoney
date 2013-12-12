@@ -11,9 +11,19 @@ public class OfferInfo
 	@JsonProperty("zipcode")
 	private String zipcode;
 	
-	@JsonProperty("offerIdList")
-	private List<String> offerIdList;
+	@JsonProperty("paypalIdList")
+	private List<String> paypalIdList;
 	
+	public List<String> getPaypalIdList()
+	{
+		return paypalIdList;
+	}
+
+	public void setPaypalIdList(List<String> paypalIdList)
+	{
+		this.paypalIdList = paypalIdList;
+	}
+
 	public String getZipcode()
 	{
 		return zipcode;
@@ -24,14 +34,6 @@ public class OfferInfo
 		this.zipcode = zipcode;
 	}
 
-	public List<String> getOfferIdList()
-	{
-		return offerIdList;
-	}
-
-	public void setOfferIdList(List<String> offerId)
-	{
-		this.offerIdList = offerId;
-	}
+	
 
 }

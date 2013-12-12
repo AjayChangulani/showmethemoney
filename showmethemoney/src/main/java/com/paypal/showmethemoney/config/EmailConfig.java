@@ -14,7 +14,7 @@ import javax.mail.internet.MimeMessage;
 import org.springframework.context.annotation.Configuration;
 
 import com.google.common.collect.ImmutableList;
-import com.paypal.showmethemoney.dto.OfferData;
+import com.paypal.showmethemoney.dto.CM2OfferData;
 
 @Configuration
 public class EmailConfig
@@ -50,7 +50,7 @@ public class EmailConfig
 		return session;
 	}
 	
-	public static Message getMessage(ImmutableList<String> recipients, ImmutableList<OfferData> offerData) throws AddressException, MessagingException
+	public static Message getMessage(ImmutableList<String> recipients, ImmutableList<CM2OfferData> offerData) throws AddressException, MessagingException
 	{
 		String text = "<h1>Howdy PayPalians<h1>" + "<img src=\"https://www.paypalobjects.com/webstatic/i/sparta/logo/logo_paypal_106x29.png\"></img>";
 				
