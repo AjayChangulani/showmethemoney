@@ -35,7 +35,6 @@ public class OfferInfoRetreivalServiceImpl implements OfferInfoRetreivalService 
 
 	}
 
-	@Override
 	public Optional<OfferInfo> getAllOffersForZipCode(String zipcode) throws Exception
 	{
 		JSONObject resp = webClient.resource(String.format(storeLocatorEndpoint, zipcode)).type(MediaType.APPLICATION_JSON).get(JSONObject.class);
@@ -75,7 +74,7 @@ public class OfferInfoRetreivalServiceImpl implements OfferInfoRetreivalService 
 	}
 	
 	public static void main(String[] args) throws Exception {
-		System.out.println(new OfferRetreivalServiceImpl().getAllOffersForZipCode("02110"));
+		System.out.println(new OfferInfoRetreivalServiceImpl().getAllOffersForZipCode("02110"));
 	}
 
 }

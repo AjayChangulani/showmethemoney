@@ -32,7 +32,7 @@ public class HomeController
 		model.addAttribute("message", "Maven Web Project + Spring 3 MVC - welcome()");
  
 		//Spring uses InternalResourceViewResolver and return back index.jsp
-		return "index";
+		return "email";
  
 	}
 

@@ -53,7 +53,7 @@ public class EmailConfig
 	public static Message getMessage(ImmutableList<String> recipients, ImmutableList<CM2OfferData> offerData) throws AddressException, MessagingException
 	{
 		String text = "<h1>Howdy PayPalians<h1>" + "<img src=\"https://www.paypalobjects.com/webstatic/i/sparta/logo/logo_paypal_106x29.png\"></img>";
-				
+
 		Message message = new MimeMessage(session);
 		message.setFrom(new InternetAddress(email_from));
 		for(String recipient:recipients)
