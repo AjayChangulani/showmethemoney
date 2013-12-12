@@ -4,6 +4,7 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.codec.binary.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -48,7 +49,8 @@ public class HomeController
 		Optional<UserInfo> userInfo = mongoDaoImpl.getUserInfo(zip);
 		if(userInfo.isPresent())
 		{
-			userInfo.get().getEmailList().remove(email);
+			String normalizedEmail = email.endsWith("@paypal.com") ? email.replace("@paypal.com", ""):email;
+			userInfo.get().getEmailList().remove(normalizedEmail);
 		
 			mongoDaoImpl.saveUserInfo(userInfo.get());
 		}
@@ -63,7 +65,10 @@ public class HomeController
 		/*
 		 * TO-DO: check for paypal email and 5 digit numeric zipcode.
 		 */
-		model.addAttribute("email", email);
+		
+		String normalizedEmail = email.endsWith("@paypal.com") ? email.replace("@paypal.com", ""):email;
+		
+		model.addAttribute("email", normalizedEmail);
 		model.addAttribute("zip", zip);
 		
 		System.out.println("ZIPCDEEEEE:" + zip);
@@ -72,6 +77,8 @@ public class HomeController
 		return "congratulations";
 	}
 	
+
+
 	private void handleUser(String email, String zip) throws UnknownHostException
 	{
 		/*
