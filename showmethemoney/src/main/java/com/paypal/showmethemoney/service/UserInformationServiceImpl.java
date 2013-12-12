@@ -1,5 +1,7 @@
 package com.paypal.showmethemoney.service;
 
+import java.net.UnknownHostException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.google.common.collect.ImmutableList;
@@ -12,9 +14,9 @@ public class UserInformationServiceImpl implements UserInformationService
 	@Autowired
 	MongoDaoImpl mongoDaoImpl;
 
-	public ImmutableList<UserInfo> getAllUsersInformation()
+	public ImmutableList<UserInfo> getAllUsersInformation() throws UnknownHostException
 	{
-		return null;
+		return mongoDaoImpl.getAllUserInfo();
 	}
 
 }

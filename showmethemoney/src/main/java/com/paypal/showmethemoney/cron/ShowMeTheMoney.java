@@ -38,7 +38,7 @@ public class ShowMeTheMoney {
 		this.mailService = mailService;
 	}
 	
-	@Scheduled(cron = "59 * * * * *")
+	@Scheduled(cron = "01 * * * * *")
 	public void execute()
 	{
 		System.out.println("Cron being exeucted"+DateUtils.formatDate(new Date()));
@@ -49,7 +49,8 @@ public class ShowMeTheMoney {
 //		mailOfferInfo(subscribers,zipCodeOfferInfo);		
 	}
 
-	private void mailOfferInfo(List<UserInfo> users,Map<String,OfferData> zipCodeOfferInfo) {
+	private void mailOfferInfo(List<UserInfo> users,Map<String,OfferData> zipCodeOfferInfo) 
+	{
 		
 		List<MailInfo> mailInfos = Lists.newArrayList();
 		
@@ -78,4 +79,13 @@ public class ShowMeTheMoney {
 		}
 		return zipCodes;
 	}
+	
+	
+	/*
+	 * 1. using mongodaoimpl.getAllUserInfo to get ALL zipcode-List<user> info.
+	 * 2. using all zipcodes in step-1, get ALL offerInfo. (using StoreLocatorAPI). create map. zipcode-list<offerInfo>.
+	 * 3. create differences. (using Mongo). update Mongo. get offerInfo from MONGO. create new map zipcode-list<offerData>
+	 * 4. join map created in step-1 and step-3.
+	 * 5. send email
+	 */
 }

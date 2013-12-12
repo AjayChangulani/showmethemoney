@@ -18,6 +18,8 @@ public class MongoConfig
 	private static String database = "hackathon";
 	private static String zipcode_user_collection = "zip_user";
 	private static String zipcode_offer_collection = "zip_offers";
+	private static String offer_info_collection = "offer_info";
+	
 	private static MongoClient client;
 	
 	static
@@ -57,13 +59,23 @@ public class MongoConfig
 	{
 		return zipcode_offer_collection;
 	}
+	public static String getOfferInfoCollName()
+	{
+		return offer_info_collection;
+	}
 	
 	public static DBCollection getUserCollection() throws UnknownHostException
 	{
 		return client.getDB(getDatabase()).getCollection(getUserCollName());
 	}
+	
 	public static DBCollection getOfferCollection() throws UnknownHostException
 	{
 		return client.getDB(getDatabase()).getCollection(getOfferCollName());
+	}
+	
+	public static DBCollection getOfferInfoCollection() throws UnknownHostException
+	{
+		return client.getDB(getDatabase()).getCollection(getOfferInfoCollName());
 	}
 }

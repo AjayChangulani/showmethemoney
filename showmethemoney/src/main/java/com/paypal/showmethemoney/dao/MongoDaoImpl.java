@@ -94,7 +94,15 @@ public class MongoDaoImpl implements MongoDao
 
 	public ImmutableList<UserInfo> getAllUserInfo() throws UnknownHostException
 	{
-		return null;
+		DBCursor resultSet = MongoConfig.getUserCollection().find();
+		ImmutableList.Builder<UserInfo> userInfoListBuilder = ImmutableList.<UserInfo> builder();
+		
+		if(resultSet.hasNext())
+		{
+			userInfoListBuilder.add(objMapper.convertValue(resultSet.next(), UserInfo.class));
+		}
+		
+		return userInfoListBuilder.build();
 	}
 
 }

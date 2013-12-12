@@ -1,6 +1,7 @@
 package controller.emailClient;
 
 import java.util.Properties;
+
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
@@ -9,11 +10,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-//import javax.mail.internet.MimeMessage.RecipientType;
-
-//import org.codemonkey.simplejavamail.Email;
-//import org.codemonkey.simplejavamail.Mailer;
-//import org.codemonkey.simplejavamail.TransportStrategy;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class EmailTest
@@ -35,6 +32,7 @@ public class EmailTest
 //	}
 //	
 	@Test
+	@Ignore
 	public void javamail()
 	{
 		final String username = "corp" + "\\" + "achangulani";
@@ -66,10 +64,14 @@ public class EmailTest
  
 			Message message = new MimeMessage(session);
 			message.setFrom(new InternetAddress("achangulani@corp.ebay.com"));
-			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("akushe@corp.ebay.com"));
-			message.setSubject("Testing Subject");
-			message.setText("Testing Body");
- 
+			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("achangulani@corp.ebay.com"));
+			message.setSubject("New offer");
+			
+			String text = "<h1>Howdy PayPalians<h1>" + "<img src=\"https://www.paypalobjects.com/webstatic/i/sparta/logo/logo_paypal_106x29.png\"></img>";
+			
+			message.setText(text);
+			message.setContent(text, "text/html");
+			
 			Transport.send(message);
  
 			System.out.println("Done");

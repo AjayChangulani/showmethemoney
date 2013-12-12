@@ -135,32 +135,36 @@ button span {
 	input[type="email"],
 	textarea,
 	select {
-		border: 1px solid #ccc;
+		/*  border: 1px solid #ccc;*/
 		padding: 6px 4px;
 		outline: none;
-		color: #777;
+		/* color: #777; */
 		margin: 0;
-		width: 100px;
+		/* width: 100px; */
 		
-		display: block;
+		/* display: block; */
 		margin-bottom: 10px;
 		background: #fff; 
 		padding: 0; 
 		-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
 	
-	
+		/* new  */
+		height: 25px;
 		}
 	
 	label,
-	legend {
-	color: #0079C1;
-    display: inline;
-    font-weight: normal;
-    line-height: 1.4em;
-    padding-right: 10px;
-		  }
+	legend 
+	{
+		color: #0079C1;
+    	display: inline;
+    	font-weight: normal;
+    	line-height: 1.4em;
+    	padding-right: 10px;
+    	/* new */
+    	font-size:20px;
+	}
 	select {
 	width: 100px;
 	padding: 5px;
@@ -174,7 +178,17 @@ button span {
 		font-weight: normal;
 		color: #444; }
 
-
+.sign-up
+{
+	border-radius: 6px;
+	font-size: 18px;
+	line-height: 1.33;
+	padding: 10px 16px;
+	background-color: #428BCA;
+	border-color: #357EBD;
+	color: #FFFFFF;
+	
+}
 /*************************
 		footer
 *************************/
