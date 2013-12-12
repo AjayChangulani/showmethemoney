@@ -17,7 +17,7 @@ import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 import com.sun.jersey.api.json.JSONConfiguration;
 
-public class OfferRetreivalServiceImpl implements OfferRetreivalService {
+public class OfferInfoRetreivalServiceImpl implements OfferInfoRetreivalService {
 
 	private static final ClientConfig JSON_CONFIGURED = new DefaultClientConfig();
 
@@ -30,7 +30,7 @@ public class OfferRetreivalServiceImpl implements OfferRetreivalService {
 	
 	private final String storeLocatorEndpoint = "http://storelocator.api.qa.where.com/v1/stores?zipcode=%s&radius=5.0&name=Davis";
 
-	public OfferRetreivalServiceImpl() {
+	public OfferInfoRetreivalServiceImpl() {
 		webClient = Client.create(JSON_CONFIGURED);
 
 	}

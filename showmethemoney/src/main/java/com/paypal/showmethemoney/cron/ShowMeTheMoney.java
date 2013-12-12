@@ -3,20 +3,16 @@ package com.paypal.showmethemoney.cron;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import org.apache.http.client.utils.DateUtils;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import com.google.common.collect.Lists;
-import com.paypal.showmethemoney.dao.OfferInfo;
 import com.paypal.showmethemoney.dao.UserInfo;
-//import com.paypal.showmethemoney.dto.OfferData;
 import com.paypal.showmethemoney.service.MailingService;
-import com.paypal.showmethemoney.service.MailingService.MailInfo;
 import com.paypal.showmethemoney.service.UserInformationService;
-
+import com.paypal.showmethemoney.dto.CM2OfferData;
 
 
 @Component
@@ -64,7 +60,7 @@ public class ShowMeTheMoney {
 //	}
 
 	
-	private Map<String,OfferInfo> findOfferInfo(List<String> zipCodes)
+	private Map<String,CM2OfferData> findOfferInfo(List<String> zipCodes)
 	{
 		return null;
 	}
